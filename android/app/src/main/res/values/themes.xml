@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.HabitPulse" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#0f0f11</item>
+        <item name="android:navigationBarColor">#0f0f11</item>
+        <item name="android:windowBackground">#0b0b0e</item>
+    </style>
+</resources>
