@@ -51,19 +51,21 @@ jobs:
           if-no-files-found: error
 
       - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: "HabitPulse v1.0.0 (Android APK)"
+          body: |
+            ### 📱 HabitPulse Mobile App for Android
+
+            Download the APK directly to your mobile phone:
+            - **[Download HabitPulse.apk](https://github.com/YuvaRaj11032007/habit-tracker/releases/download/v1.0.0/HabitPulse.apk)**
+
+            #### 📥 How to Install on Android:
+            1. Tap the download link above on your Android phone.
+            2. Open the downloaded file from your browser downloads or Files app.
+            3. Tap **Install** (allow 'Install unknown apps' if prompted).
+            4. Open **HabitPulse** and enjoy tracking your daily habits!
+          files: HabitPulse.apk
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh release create v1.0.0 HabitPulse.apk \
-            --title "HabitPulse v1.0.0 (Android APK)" \
-            --notes "### 📱 HabitPulse Mobile App for Android
-
-          Download the APK directly to your mobile phone:
-          - **[Download HabitPulse.apk](https://github.com/YuvaRaj11032007/habit-tracker/releases/download/v1.0.0/HabitPulse.apk)**
-
-          #### 📥 How to Install on Android:
-          1. Tap the download link above on your Android phone.
-          2. Open the downloaded file from your browser downloads or Files app.
-          3. Tap **Install** (allow 'Install unknown apps' if prompted).
-          4. Open **HabitPulse** and enjoy tracking your daily habits!" \
-            --clobber
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
